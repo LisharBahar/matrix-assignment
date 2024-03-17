@@ -1,0 +1,62 @@
+openapi: 3.0.0
+info:
+  title: Math API
+  description: A simple REST API for performing mathematical operations on two numbers.
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/LISHARLB/matrix/1.0.0
+paths:
+  /math:
+    post:
+      summary: Perform a mathematical operation on two numbers
+      operationId: mathPOST
+      parameters:
+      - name: operation
+        in: header
+        description: "The mathematical operation to perform (e.g., add, subtract, multiply, divide)"
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/math_body'
+        required: true
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+      security:
+      - bearerAuth:
+        - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyMTIzIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzEwNjgyMDc0LCJleHAiOjE3MTA2ODU2NzR9.gD_efgdlBxpY3dpnc3MQfmTi8Jdgw57l0X94gvnZTXs
+      x-swagger-router-controller: Default
+components:
+  schemas:
+    math_body:
+      type: object
+      properties:
+        num1:
+          type: number
+          description: The first number
+        num2:
+          type: number
+          description: The second number
+    inline_response_200:
+      type: object
+      properties:
+        result:
+          type: number
+          description: The result of the mathematical operation
+      example:
+        result: 0.80082819046101150206595775671303272247314453125
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
