@@ -6,7 +6,7 @@
  *
  * body Math_body 
  * operation String The mathematical operation to perform (e.g., add, subtract, multiply, divide)
- * returns inline_response_200
+ * returns the result of the operation via inline_response_200
  **/
 const OPERATIONS = {
   add: (num1, num2) => num1 + num2,

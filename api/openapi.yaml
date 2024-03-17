@@ -4,7 +4,7 @@ info:
   description: A simple REST API for performing mathematical operations on two numbers.
   version: 1.0.0
 servers:
-- url: https://app.swaggerhub.com/apis/LisharBahar/matrix-assigment-api/1.0.0
+- url: http://localhost:8080/
 paths:
   /math:
     post:
@@ -34,7 +34,7 @@ paths:
                 $ref: '#/components/schemas/inline_response_200'
       security:
       - bearerAuth: []
-      x-swagger-router-controller: MathController
+      x-swagger-router-controller: mathController
 components:
   schemas:
     math_body:
@@ -53,7 +53,7 @@ components:
           type: number
           description: The result of the mathematical operation
       example:
-        result: 0.80082819046101150206595775671303272247314453125
+        result: 10
   securitySchemes:
     bearerAuth:
       type: http
