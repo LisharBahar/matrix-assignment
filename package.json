@@ -1,6 +1,6 @@
 {
   "name": "math-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple REST API for performing mathematical operations on two numbers.",
   "main": "index.js",
   "scripts": {
