@@ -32,3 +32,14 @@ npm test
 ```
 
 ** I've made the math/POST method async even though it's not necessary
+
+## Run
+Feel free to test our awesome math calculator by sending a POST request to '/math' route.
+Please don't forget to include params:
+```
+{ num1: <SOME_NUMBER>, num2: <SOME_NUMBER>}
+```
+Additinally you need to add an HttpHeader named 'operation' with one of the following mathematical methods:
+```
+'add' | 'subtract' | 'multiply' | 'divide'
+```
