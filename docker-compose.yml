@@ -5,4 +5,4 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:8080" # Map container port 3000 to host port 3000
+      - "8080:8080" 

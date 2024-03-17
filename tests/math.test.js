@@ -1,5 +1,13 @@
 // math.test.js
-const { mathPOST } = require('../service/DefaultService');
+const { mathPOST } = require('../service/MathService');
+
+test('missing a number input test', async () => {
+  await expect(mathPOST({num1: 1}, 'add')).resolves.toStrictEqual({"result": 3});
+});
+
+test('requested an unknown operations', async () => {
+  await expect(mathPOST({num1: 1, num2: 2}, 'unknown operation')).resolves.toStrictEqual({"result": 3});
+});
 
 test('adds 1 + 2 to equal 3', async () => {
   await expect(mathPOST({num1: 1, num2: 2}, 'add')).resolves.toStrictEqual({"result": 3});

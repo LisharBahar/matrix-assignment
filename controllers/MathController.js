@@ -1,9 +1,7 @@
 'use strict';
 
 var utils = require('../utils/writer.js');
-var Default = require('../service/DefaultService');
-
-const operations = ['add', 'subtract', 'multiply', 'divide']
+var Default = require('../service/MathService');
 
 module.exports.mathPOST = function mathPOST (req, res, next, body, operation) {
   Default.mathPOST(body, operation)
